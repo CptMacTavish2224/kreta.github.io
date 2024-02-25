@@ -1,0 +1,11 @@
+*
+html {
+	background-color: #000000;
+	color: white;
+	font-size: 10px;
+}
+body {
+	background-color: darkred;
+	font-family: Garamond, serif;
+	color: darkyellow;
+}
