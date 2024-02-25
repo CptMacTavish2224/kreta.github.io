@@ -1,11 +1,113 @@
 *
-html {
-	background-color: #000000;
-	color: white;
-	font-size: 10px;
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	background-color: #850202;
 }
 body {
 	background-color: darkred;
 	font-family: Garamond, serif;
 	color: darkyellow;
+}
+/* Styl nagłówka */
+header 
+{
+    background-color: #850202;
+    color: #B1A906;
+    padding: 20px;
+	border-bottom: 2px solid #B1A906;
+}
+
+header h1 
+{
+	text-align: center;
+	position: relative;
+    margin: 0;
+}
+
+/* Styl nawigacji */
+nav ul 
+{
+    list-style-type: none; /* usunięcie domyślnego stylu */
+	text-align: center;
+}
+
+nav ul li /* elementy listy */
+{
+    display: inline; /* elementy obok siebie */
+    margin-right: 60px;
+}
+
+nav ul li a /* styl linków */
+{
+    color: #B1A906;
+    text-decoration: none; /* usunięcie podkreślenia */
+}
+
+/* pasek boczny */
+#sidebar {
+  width: 150px;
+  height: 100vh;
+  background-color: #850202;
+  position: fixed;
+  top: 20;
+  left: -200px;
+  transition: left 0.3s ease;
+  padding: 20px;
+  border-right: 1px solid transparent;
+}
+h2
+{
+	color: #B1A906;
+}
+
+div ul li /*styl listy*/
+{
+	margin: 20px;
+}
+
+div ul li a /* styl linków */
+{
+    color: #B1A906;
+    text-decoration: none; /* usunięcie podkreślenia */
+}
+
+
+#sidebar.show {
+  left: 0;
+  border-right-color: #B1A906;
+}
+
+#toggleButton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+}
+
+/* Responsywny design */
+@media screen and (max-width: 768px) 
+{
+    header 
+	{
+        text-align: center;
+    }
+
+    nav ul 
+	{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul li 
+	{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    article 
+	{
+        padding: 10px;
+    }
 }
