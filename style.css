@@ -22,7 +22,7 @@ header
 	border-bottom: 2px solid #B1A906;
 }
 
-header h1 
+h1 
 {
 	text-align: center;
 	position: relative;
@@ -54,7 +54,10 @@ nav ul li a /* styl linków */
 	font-size: 2rem;
     text-decoration: none; /* usunięcie podkreślenia */
 }
-
+section
+{
+	margin: 20px /*margines między elementami*/
+}
 article /* boxy */
 {
     padding: 20px;
@@ -69,11 +72,11 @@ article /* boxy */
   height: 100vh;
   background-color: #850202;
   position: fixed;
-  top: 20;
+  top: 40px;
   left: -200px;
   transition: left 0.3s ease;
   padding: 20px;
-  border-right: 1px solid transparent;
+  border: 1px solid transparent;
 }
 h2
 {
@@ -95,6 +98,7 @@ div ul li a /* styl linków */
 #sidebar.show {
   left: 0;
   border-right-color: #B1A906;
+  z-index: 999;
 }
 
 #toggleButton {
