@@ -111,3 +111,15 @@ div ul li a /* styl linków */
         padding: 10px;
     }
 }
+a:visited,
+a:active,
+a 
+{
+  text-decoration: none;
+}
+a:hover 
+{
+  cursor: pointer;
+  color: red;
+  transition: 0.4s;
+}
