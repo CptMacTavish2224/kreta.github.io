@@ -4,14 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 	background-color: #850202;
+	font-size: 16px;
 }
 /* 	royal blue: 0402AD
 	lannister red: 850202
 	gold: B1A906 */
-body 
+body /* wybór czcionki*/
 {
 	font-family: Garamond, serif;
-	color: darkyellow;
+	color: #B1A906;
 }
 /* Styl nagłówka */
 header 
@@ -22,15 +23,26 @@ header
 	border-bottom: 2px solid #B1A906;
 }
 
-h1 
+header p /*podtytuł*/
+{
+	text-align: center;
+}	
+
+h1 /*główne headery*/
 {
 	text-align: center;
 	position: relative;
     margin: 0;
-	font-size: 80px;
+	font-size: 5rem;
 	font-style: italic;
 	font-weight: bold;
 	text-decoration: underline;
+}
+h2 /* secondary headers */
+{
+	color: #B1A906;
+	text-align: center;
+	font-size: 2rem;
 }
 
 /* Styl nawigacji */
@@ -63,24 +75,40 @@ article /* boxy */
     padding: 20px;
     border: 1px solid #B1A906;
     margin-bottom: 20px;
-	color: white;
+	text-align: center;
 }
-
+article img /* obrazy wewnątrz boxów*/
+{
+	display: block; /* image display as block element*/
+	margin: 0 auto; /*autocenter*/
+	width: 100%;
+	height: auto; /*scales the image to article object*/
+}
+article p /* czcionka w boxach*/
+{
+	font-size: 1rem;
+}
+.container
+{
+	display: flex; /* flexbox do ustawienia elementów article*/
+	flex-wrap:wrap; /*wrap linii na wypadek braku miejsca*/
+}
+.side-by-side
+{
+	width: 50%; /*article bierze połowę miejsca na podziale*/
+}
+	
 /* pasek boczny */
 #sidebar {
-  width: 150px;
+  width: 200px;
   height: 100vh;
   background-color: #850202;
   position: fixed;
   top: 40px;
-  left: -200px;
+  left: -250px;
   transition: left 0.3s ease;
   padding: 20px;
   border: 1px solid transparent;
-}
-h2
-{
-	color: #B1A906;
 }
 
 div ul li /*styl listy*/
@@ -132,6 +160,11 @@ div ul li a /* styl linków */
 	{
         padding: 10px;
     }
+}
+video 
+{
+	max-width: 100%;
+	height: auto;
 }
 
 a:visited,
