@@ -18,6 +18,7 @@ body /* wybór czcionki*/
 header 
 {
     background-color: #850202;
+    font-family: Garamond, serif;
     color: #B1A906;
     padding: 20px;
 	border-bottom: 2px solid #B1A906;
