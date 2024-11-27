@@ -1,32 +1,37 @@
+/* Universal selector to reset default margin, padding, set box-sizing, and set default font size and background color*/
 *
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-	background-color: #850202;
-	font-size: 16px;
+    margin: 0; /* remove default margin from all elements */
+    padding: 0; /* remove default padding from all elements */
+    box-sizing: border-box; /* set box-sizing to border-box for consistent sizing */
+	font-size: 16px; /* set default font size */
 }
-/* 	royal blue: 0402AD
+/*
+	royal blue: 0402AD
 	lannister red: 850202
-	gold: B1A906 */
-body /* wybór czcionki*/
+	gold: B1A906
+	silver: d5e0e0
+	gray: bcbcc4
+	turquoise: 01f8e7
+	seledine: 01c47e
+*/
+	
+body /* body styling */
 {
-	font-family: Garamond, serif;
-	color: #B1A906;
+	font-family: Garamond, serif; /* set Garamond as the main font */
+	color: #0402AD; /* set text color to royal blue */
 }
 /* Styl nagłówka */
 header 
 {
-    background-color: #850202;
-    font-family: Garamond, serif;
-    color: #B1A906;
     padding: 20px;
-	border-bottom: 2px solid #B1A906;
+	border-bottom: 2px solid #9b9b9b;
 }
 
 header p /*podtytuł*/
 {
 	text-align: center;
+	color: #9b9b9b;
 }	
 
 h1 /*główne headery*/
@@ -35,13 +40,11 @@ h1 /*główne headery*/
 	position: relative;
     margin: 0;
 	font-size: 5rem;
-	font-style: italic;
 	font-weight: bold;
 	text-decoration: underline;
 }
 h2 /* secondary headers */
 {
-	color: #B1A906;
 	text-align: center;
 	font-size: 2rem;
 }
@@ -62,10 +65,9 @@ nav ul li /* elementy listy */
 
 nav ul li a /* styl linków */
 {
-    color: #B1A906;
-	font-style: italic;
+    color: #9b9b9b;
 	font-size: 2rem;
-    text-decoration: none; /* usunięcie podkreślenia */
+	font-weight: bold;
 }
 section
 {
@@ -74,10 +76,16 @@ section
 article /* boxy */
 {
     padding: 20px;
-    border: 1px solid #B1A906;
+    border: 1px solid #9b9b9b;
     margin-bottom: 20px;
 	text-align: center;
 }
+.special_width
+{
+	width: 50%;
+	overflow-x: auto;
+}
+
 article img /* obrazy wewnątrz boxów*/
 {
 	display: block; /* image display as block element*/
@@ -88,6 +96,7 @@ article img /* obrazy wewnątrz boxów*/
 article p /* czcionka w boxach*/
 {
 	font-size: 1rem;
+	color: #9b9b9b;
 }
 .container
 {
@@ -98,12 +107,20 @@ article p /* czcionka w boxach*/
 {
 	width: 50%; /*article bierze połowę miejsca na podziale*/
 }
+
+/* Link z powrotem do głównej strony */
+.back-link
+{
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 1000;
+}
 	
 /* pasek boczny */
 #sidebar {
   width: 200px;
   height: 100vh;
-  background-color: #850202;
   position: fixed;
   top: 40px;
   left: -250px;
@@ -115,25 +132,29 @@ article p /* czcionka w boxach*/
 div ul li /*styl listy*/
 {
 	margin: 20px;
+	background-color #01c47e;
 }
 
 div ul li a /* styl linków */
 {
-    color: #B1A906;
+    color: #9b9b9b;
     text-decoration: none; /* usunięcie podkreślenia */
+	font-weight: bold;
 }
 
 
 #sidebar.show {
   left: 0;
-  border-right-color: #B1A906;
+  background-color: #01c47e;
+  border-right-color: #9b9b9b;
+  border-top-color: #9b9b9b;
   z-index: 999;
 }
 
 #toggleButton {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 20px;
   z-index: 999;
 }
 
@@ -168,15 +189,154 @@ video
 	height: auto;
 }
 
-a:visited,
-a:active,
-a 
-{
-  text-decoration: none;
+/* Kalendarz */
+.calendar-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+	width: fit-content;
+	display: inline-block;
+	max-width: 100%;
+	overflow: visible;
 }
-a:hover 
+
+.calendar-container header {
+	position: relative;
+	flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border: 2px solid #9b9b9b;
+}
+
+header .calendar-navigation {
+	position: absolute;
+    display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 1rem;
+}
+
+header .calendar-navigation span {
+    height: 2rem;
+    width: 2rem;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2rem;
+    border-radius: 50%;
+    user-select: none;
+    color: #aeabab;
+    font-size: 1.9rem;
+}
+
+.calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+header .calendar-navigation span:hover {
+    background: #f2f2f2;
+}
+
+header .calendar-current-date {
+	text-align: center;
+	height: 2rem;
+	line-height: 2rem;
+    font-weight: 500;
+    font-size: 1.45rem;
+	padding: 0 1rem;
+}
+
+.calendar-body {
+    padding: 20px;
+}
+
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: nowrap;
+    display: flex;
+    text-align: center;
+}
+
+.calendar-body .calendar-dates {
+    margin-bottom: 20px;
+}
+
+.calendar-body li {
+    width: calc(100%/7);
+    font-size: 1.07rem;
+    color: #414141;
+}
+.calendar-weekdays
 {
-  cursor: pointer;
-  color: red;
-  transition: 0.4s;
+	display: flex;
+}
+
+.calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 500;
+}
+
+.calendar-body .calendar-dates
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.calendar-body .calendar-dates li {
+    margin-top: 30px;
+	flex: 1 0 calc(100% / 7); /* Each date takes up one-seventh of the row */
+    text-align: center;
+    margin: 5px 0; /* Optional spacing between rows */
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.calendar-dates li.inactive {
+    color: #aaa;
+}
+
+.calendar-dates li.active {
+    color: #fff;
+}
+
+.calendar-dates li::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+    background: #6332c5; /* colour of today's date */
+}
+
+.calendar-dates li:not(.active):hover::before {
+    background: #e4e1e1; /* colour of hovered over date not-today */
+}
+
+.calendar-dates li.reserved::before {
+    background: #850202; /* mark reserved dates with red circle */
+}
+
+
+/* Linki*/
+a:visited, /* targets all links clicked on */
+a:active, /* targets all links currently clicked on or activated */
+a  /* targets all elements regardless of their state */
+{
+  text-decoration: none; /* removes underlines from links in any of the specified states */
+}
+a:hover /* targets elements when mouse pointer hovers over them */
+{
+  cursor: pointer; /* changes the cursor to a pointer whe hovering over the link */
+  color: #03067d; /* defines the new color when hovered over */ 
+  transition: 0.4s; /* defines how long the transition takes */
+  text-decoration: underline; /* adds underline to the hovered over links */
 }

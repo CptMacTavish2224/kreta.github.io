@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Contact</title>
+	<meta charset="UTF-8"> 	<!-- setting the character encoding for the document-->
+	<meta name="keywords" content="Nocleg, Grecja, Morze, Mieszkanie, Wakacje, Rezerwacja, Greece, Crete, Booking, Accomodation, Sea, Lodging"> 	<!-- adding meta keywords for SEO purposes -->
+	<meta name="description" content="Wynajem domu na krecie | House rental in Crete"> 	<!-- adding a description of the website for SEO purposes -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 	<!-- setting the viewport to make the website responsive -->
+	<link rel="stylesheet" href="style.css" <!-- linking to an external CSS file for styling -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"> <!-- importing the material symbols rounded from google fonts -->
+	<title> Villa Barbara - Contact </title>
 </head>
 <body>
-	<header>
-		<h1>Contact</h1>
-		<p>How to book your place at the Villa</p>
-	</header>
+<!-- backlink to the main page -->
+    <a href="index.html" class="back-link">
+        <img src="return.png" alt="Back to Main Page" />
+    </a>
+    <header> <!-- Main header with page title and description -->
+        <h1>Contact</h1>
+        <p>How to book your place at the Villa</p>
+    </header>
 <main>
-	<section>
-		<article>
-			<h2>Placeholder<h2/>
-			<p>stuff stuff stuff stuff</p>
-		</article>
-		<article>
-			<img src="room.jpg" alt="photo of one of the rooms">
-		</article>
-	</section>
+    <section>
+        <article class="special_width">
+            <h2>Booking Calendar</h2> <!-- calendar heading -->
+            <div class="calendar-container">
+                <header class="calendar-header">
+                    <div class="calendar-navigation"> <!-- previous and next month buttons -->
+                        <span id="calendar-prev" class="material-symbols-rounded">chevron_left</span> <!-- previous month -->
+                        <p class="calendar-current-date"></p> <!-- placeholder for current -->
+                        <span id="calendar-next" class="material-symbols-rounded">chevron_right</span> <!-- next month -->
+                    </div>
+                </header>
+
+                <div class="calendar-body">
+                    <ul class="calendar-weekdays"> <!-- weekday labels for the calendar -->
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                        <li>Sun</li>
+                    </ul>
+                    <ul class="calendar-dates"><!-- dates of the current month will be dynamically populated here --></ul>
+                </div>
+            </div>
+        </article>
+    </section>
 </main>
-	<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
