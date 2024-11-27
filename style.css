@@ -314,7 +314,7 @@ header .calendar-current-date {
 }
 
 .calendar-dates li.active::before {
-    background: #6332c5; /* colour of today's date */
+    background: #B1A906; /* colour of today's date */
 }
 
 .calendar-dates li:not(.active):hover::before {
